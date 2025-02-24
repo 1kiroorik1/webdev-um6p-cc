@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .tasks {
+            border: 1px solid;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .tasks:before {
+            content: "Task ";
+        }
+
+        .completed {
+            border-color: green;
+        }
+
+        .not-completed {
+            border-color: red;
+        }
+
+        .check {
+            font-weight: bold;
+        }
+
+        .completed .check {
+            color: green;
+        }
+
+        .not-completed .check {
+            color: red;
+        }
+
+        .active-filter {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <fieldset>
+            <legend>Options</legend>
+            Type:
+            <select v-model="type">
+                <option value="0">All</option>
+                <option value="1">Completed</option>
+                <option value="2">To Do</option>
+            </select>
+            <hr>
+            <div>Total Tasks: {{totalFilteredTasks}}/{{ totalTasks }}</div>
+        </fieldset>
+
+        <ul>
+            <li v-for="task in FilteredTasks" :class="{ 'completed tasks': task.completed, 'not-completed tasks': !task.completed }">
+                <h3>{{ task.id }}. {{ task.title }}</h3>
+                "{{ task.description }}"<br>
+
+                <span v-if="task.completed" class="check">Completed</span>
+                <span v-else class="check">Not Completed</span><br>
+                
+                <button @click="complete(task.id)" v-show="!task.completed">Mark as Completed</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    type: 0,
+                    TaskList: [],
+                };
+            },
+            methods: {
+                complete(id) {
+                    const task = this.TaskList.find(task => task.id === id);
+                    if (task) {
+                        task.completed = true;
+                    }
+                },
+            },
+            computed: {
+                FilteredTasks() {
+                    if (this.type == 0) {
+                        return this.TaskList;
+                    } else if (this.type == 1) {
+                        return this.TaskList.filter(task => task.completed);
+                    } else if (this.type == 2) {
+                        return this.TaskList.filter(task => !task.completed);
+                    }
+                },
+                totalTasks() {
+                    return this.TaskList.length;
+                },
+                totalFilteredTasks() {
+                    return this.FilteredTasks.length;
+                }
+            },
+            mounted() {
+                fetch("./taskList.json")
+                    .then(response => response.json())
+                    .then(data => {
+                        this.TaskList = data;
+                    })
+                    .catch(error => {
+                        console.error('Error loading JSON:', error);
+                        alert('Error loading tasks data.');
+                    });
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
