@@ -30,7 +30,7 @@
 				<!-- Fiches produits -->
 				<section class="fiches">
 					<div v-for="piece in filteredPieces" :key="piece.id" class="fiche">
-						<img :src="'images/' + piece.Image" :alt="piece.nom">
+						<img :src="'https://picsum.photos/100?random=' + piece.id" :alt="piece.nom">
 						<h4>{{ piece.nom }}</h4>
 						<p>Prix: {{ piece.prix }}€</p>
 						<p>Catégorie: {{ piece.categorie }}</p>
