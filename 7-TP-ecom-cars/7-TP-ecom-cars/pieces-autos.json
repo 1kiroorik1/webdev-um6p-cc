@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1,
+        "nom": "Batterie 12V",
+        "prix": 120,
+        "categorie": "Électricité",
+        "disponible": true,
+        "image": "https://picsum.photos/100?random=1"
+    },
+    {
+        "id": 2,
+        "nom": "Filtre à huile",
+        "prix": 15,
+        "categorie": "Filtration",
+        "disponible": false
+    },
+    {
+        "id": 3,
+        "nom": "Bougies d'allumage (x4)",
+        "prix": 35,
+        "categorie": "Moteur",
+        "disponible": true
+    },
+    {
+        "id": 4,
+        "nom": "Disques de frein (x2)",
+        "prix": 80,
+        "categorie": "Freinage",
+        "disponible": false
+    },
+    {
+        "id": 5,
+        "nom": "Courroie de distribution",
+        "prix": 90,
+        "categorie": "Moteur",
+        "disponible": true
+    },
+    {
+        "id": 6,
+        "nom": "Pompe à eau",
+        "prix": 70,
+        "categorie": "Refroidissement",
+        "disponible": true
+    },
+    {
+        "id": 7,
+        "nom": "Amortisseurs arrière (x2)",
+        "prix": 150,
+        "categorie": "Suspension",
+        "disponible": true
+    },
+    {
+        "id": 8,
+        "nom": "Filtre à air",
+        "prix": 20,
+        "categorie": "Filtration",
+        "disponible": true
+    },
+    {
+        "id": 9,
+        "nom": "Capteur ABS",
+        "prix": 50,
+        "categorie": "Sécurité",
+        "disponible": true
+    },
+    {
+        "id": 10,
+        "nom": "Radiateur de refroidissement",
+        "prix": 130,
+        "categorie": "Refroidissement",
+        "disponible": true
+    },
+    {
+        "id": 11,
+        "nom": "Alternateur",
+        "prix": 200,
+        "categorie": "Électricité",
+        "disponible": true
+    },
+    {
+        "id": 12,
+        "nom": "Démarreur",
+        "prix": 180,
+        "categorie": "Électricité",
+        "disponible": true
+    },
+    {
+        "id": 13,
+        "nom": "Kit d’embrayage",
+        "prix": 220,
+        "categorie": "Transmission",
+        "disponible": true
+    },
+    {
+        "id": 14,
+        "nom": "Injecteur de carburant",
+        "prix": 110,
+        "categorie": "Moteur",
+        "disponible": false
+    },
+    {
+        "id": 15,
+        "nom": "Pompe à carburant",
+        "prix": 90,
+        "categorie": "Carburant",
+        "disponible": true
+    },
+    {
+        "id": 16,
+        "nom": "Capteur de pression des pneus (TPMS)",
+        "prix": 45,
+        "categorie": "Sécurité",
+        "disponible": true
+    },
+    {
+        "id": 17,
+        "nom": "Rétroviseur extérieur",
+        "prix": 60,
+        "categorie": "Carrosserie",
+        "disponible": true
+    },
+    {
+        "id": 18,
+        "nom": "Échappement complet",
+        "prix": 250,
+        "categorie": "Échappement",
+        "disponible": false
+    },
+    {
+        "id": 19,
+        "nom": "Vanne EGR",
+        "prix": 140,
+        "categorie": "Moteur",
+        "disponible": false
+    },
+    {
+        "id": 20,
+        "nom": "Turbo",
+        "prix": 400,
+        "categorie": "Moteur",
+        "disponible": false
+    },
+    {
+        "id": 21,
+        "nom": "Joint de culasse",
+        "prix": 75,
+        "categorie": "Moteur",
+        "disponible": false
+    },
+    {
+        "id": 22,
+        "nom": "Boîtier de direction",
+        "prix": 300,
+        "categorie": "Direction",
+        "disponible": false
+    },
+    {
+        "id": 23,
+        "nom": "Silent bloc de suspension",
+        "prix": 35,
+        "categorie": "Suspension",
+        "disponible": false
+    },
+    {
+        "id": 24,
+        "nom": "Cardan de transmission",
+        "prix": 160,
+        "categorie": "Transmission",
+        "disponible": false
+    },
+    {
+        "id": 25,
+        "nom": "Capteur de position vilebrequin",
+        "prix": 50,
+        "categorie": "Moteur",
+        "disponible": true
+    },
+  {
+        "id": 26,
+        "nom": "Batterie 12V",
+        "prix": 120,
+        "categorie": "Électricité",
+        "image": "images/batterie-12v.jpg",
+        "disponible": true
+    },
+    {
+        "id": 27,
+        "nom": "Filtre à huile",
+        "prix": 15,
+        "categorie": "Filtration",
+        "image": "images/filtre-huile.jpg",
+        "disponible": false
+    }
+]

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            TP3-JS
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="TP3.css">
+        <link rel="stylesheet" href="styles.css"> <!-- New CSS file for styling -->
+    </head>
+    <body>
+        <h1>Exercice 3</h1>
+        <form method="post" id="form">
+            <label for="number">Code Etudiant</label>
+            <input type="text" name="code" id="code" required><br>
+            <label for="text">Nom etudiant</label>
+            <input type="text" name="nom" id="nom" required><br>
+            <label for="text">Prenom etudiant</label>
+            <input type="text" name="prenom" id="prenom" required><br>
+            <label for="text">Semestre</label>
+            <select name="semestre" id="semestre" style="width: 23%;" required>
+                <option value="choisir" disbaled selcted>choisir un semestre</option>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+            </select><br>
+            <label for="module1" id="m1">module1</label>
+            <input type="number" name="module1" id="module1" required><br>
+            <label for="module2" id="m2">module2</label>
+            <input type="number" name="module2" id="module2" required><br>
+            <label for="module3" id="m3">module3</label>
+            <input type="number" name="module3" id="module3" required><br>
+            <label for="module4" id="m4">module4</label>
+            <input type="number" name="module4" id="module4" required><br>
+            <label for="module5" id="m5">module5</label>
+            <input type="number" name="module5" id="module5" required><br>
+            <label for="module6" id="m6">module6</label>
+            <input type="number" name="module6" id="module6" required><br>
+            <input type="submit" value="submit" id="submit">
+            <input type="reset" value="Annuler" id="Annuler">
+        </form>
+        <table id="table">
+            <tr>
+                <th>Code Etudiant</th>
+                <th>Nom etudiant</th>
+                <th>Prenom etudiant</th>
+                <th>Semestre</th>
+                <th>Module1</th>
+                <th>Module2</th>
+                <th>Module3</th>
+                <th>Module4</th>
+                <th>Module5</th>
+                <th>Module6</th>
+                <th>Moyenne</th>
+                <th>Decision</th>
+            </tr>
+        </table>
+    </body>
+    <script>
+        let form = document.getElementById('form');
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            let data = [];
+            let decision;
+
+            let code = document.getElementById('code').value;
+            data.push(code);
+            let nom = document.getElementById('nom').value;
+            data.push(nom);
+            let prenom = document.getElementById('prenom').value;
+            data.push(prenom);
+            let semestre = document.getElementById('semestre').value;
+            data.push(semestre);
+            let module1 = parseFloat(document.getElementById('module1').value);
+            data.push(module1);
+            let module2 = parseFloat(document.getElementById('module2').value);
+            data.push(module2);
+            let module3 = parseFloat(document.getElementById('module3').value);
+            data.push(module3);
+            let module4 = parseFloat(document.getElementById('module4').value);
+            data.push(module4);
+            let module5 = parseFloat(document.getElementById('module5').value);
+            data.push(module5);
+            let module6 = parseFloat(document.getElementById('module6').value);
+            data.push(module6);
+            let moyenne = (module1 + module2 + module3 + module4 + module5 + module6) / 6;
+            data.push(moyenne);
+            let c = 0;
+            for (let i = 4; i < 10; i++){
+                if (data[i] < 8 ) {
+                    decision = 'semestre non valide';
+                    break;
+                }
+                else if (data[i] >= 8 && data[i] < 12) {
+                    c++;
+                    if (c == 3) {
+                        decision = 'semestre non valide';
+                        break;
+                    }
+                }
+            }
+            if (moyenne >= 12 && decision != 'semestre non valide') {
+                decision = 'semestre valide';
+            } else {
+                decision = 'semestre non valide';
+            }
+            data.push(decision);
+            console.log(data);
+            let table = document.getElementById('table');
+            let tr = document.createElement('tr');
+            for (let i = 0; i < data.length; i++) {
+                let td = document.createElement('td');
+                td.innerHTML = data[i];
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        });
+
+        document.getElementById('Annuler').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('form').reset();
+        });
+    </script>
+</html>

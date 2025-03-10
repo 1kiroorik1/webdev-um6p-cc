@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css" />
     <title>Quiz App</title>
   </head>
   <body>
     <div class="container">
+      <!-- Start screen section -->
       <div class="start-screen">
         <h1 class="heading">Quiz App</h1>
         <div class="settings">
+          <!-- Number of questions selection -->
           <label for="num-questions">Number of Questions:</label>
           <select id="num-questions">
             <option value="5">5</option>
@@ -23,6 +26,7 @@
             <option value="20">40</option>
             <option value="20">50</option>
           </select>
+          <!-- Category selection -->
           <label for="category">Select Category:</label>
           <select id="category">
             <option value="">Any Category</option>
@@ -51,6 +55,7 @@
             <option value="31">Entertainment: Japanese Anime & Manga</option>
             <option value="32">Entertainment: Cartoon & Animations</option>
           </select>
+          <!-- Difficulty selection -->
           <label for="difficulty">Select difficulty:</label>
           <select id="difficulty">
             <option value="">any difficulty</option>
@@ -58,6 +63,7 @@
             <option value="medium">medium</option>
             <option value="hard">hard</option>
           </select>
+          <!-- Time per question selection -->
           <label for="time">Select time per question:</label>
           <select id="time">
             <option value="10">10 seconds</option>
@@ -68,8 +74,10 @@
             <option value="60">60 seconds</option>
           </select>
         </div>
+        <!-- Start quiz button -->
         <button class="btn start">Start Quiz</button>
       </div>
+      <!-- Quiz section -->
       <div class="quiz hide">
         <div class="timer">
           <div class="progress">
@@ -92,9 +100,11 @@
             </span>
           </div>
         </div>
+        <!-- Submit and Next buttons -->
         <button class="btn submit" disabled>Submit</button>
         <button class="btn next">Next</button>
       </div>
+      <!-- End screen section -->
       <div class="end-screen hide">
         <h1 class="heading">Quiz App</h1>
         <div class="score">
@@ -104,10 +114,12 @@
             <span class="total-score">/10</span>
           </div>
         </div>
+        <!-- Restart quiz button -->
         <button class="btn restart">Restart Quiz</button>
       </div>
     </div>
 
+    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
   </body>
 </html>
